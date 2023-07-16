@@ -9,9 +9,9 @@ module.exports = {
       backgroundColor: '#0B101E',
       backgroundLighter: '#212937',
       backgroundFooter: '#869FA9',
-      backgroundInfo: '#406E8E'
-      // black: '#000',
-      // white: '#fff',
+      backgroundInfo: '#406E8E',
+      black: '#000',
+      white: '#fff',
       // gray: {
       //   50: '#f9fafb',
       //   100: '#f4f5f7',

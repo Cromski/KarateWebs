@@ -7,6 +7,9 @@ module.exports = {
       // transparent: 'transparent',
       textColor: '#cdcdcd',
       backgroundColor: '#0B101E',
+      backgroundLighter: '#212937',
+      backgroundFooter: '#869FA9',
+      backgroundInfo: '#406E8E'
       // black: '#000',
       // white: '#fff',
       // gray: {

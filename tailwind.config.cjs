@@ -1,11 +1,11 @@
 
 module.exports = {
-  content: [ './src/**/*.{html,svelte,css,ts,js}'],
+  content: [ './src/**/*.{html,svelte,ts,js}'],
   theme: {
     extend: {},
     colors: {
       // transparent: 'transparent',
-      // current: 'currentColor',
+      textColor: '#cdcdcd',
       backgroundColor: '#0B101E',
       // black: '#000',
       // white: '#fff',
@@ -19,8 +19,9 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: [ 'light',
-    ],
+    styled: true,
+    themes: false,
+    rtl: false,
   },
 }
 

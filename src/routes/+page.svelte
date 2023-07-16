@@ -3,4 +3,6 @@
 </script>
 
 
-<h1>welcome</h1>
+<img src="/yellow.png" alt="" class="w-4/5 mx-auto mt-9">
+
+<h1 class=" text-center mx-3 mt-4">Cras sollicituion sodales quam, et tempus est bibendum eget. pPrawesent et velit ague. Quisque vulputate lettus sit amet scaliseique piacerat.</h1>

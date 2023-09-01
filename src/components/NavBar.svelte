@@ -4,7 +4,7 @@
 
 <div class="w-full h-24 bg-backgroundLighter flex justify-between">
     <img src="/yellow.png" alt="" class=" ml-10 h-4/5 inline-block my-auto">
-    <div class="inline-block scale-50">
+    <button class="inline-block scale-50">
         <MdMenu />
-    </div>
+    </button>
 </div>

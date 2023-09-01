@@ -6,7 +6,6 @@
 
 <div class=" w-[320px] grid grid-cols-2 mt-20 [&>*:nth-child(3)]:col-span-2 sm:[&>*:nth-child(3)]:col-span-1 ">
 
-
     <MediaQuery query='(min-width: 641px)' let:matches>
         {#if matches}
         <Hexagon right={160} mt={0} text="Aktiviteter" imgPath="/karate.jpg" value={1} />

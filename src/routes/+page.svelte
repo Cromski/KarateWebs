@@ -12,9 +12,8 @@
         <h1 class=" text-center mx-auto my-7 text-textColor text-xl w-4/5 ">Cras sollicidtuion sodalfes quam, et tempus est bibendum eget. pPrawesent et velit ague. Quisque vulputate lettus sit amet scaliseique piacerat.</h1>
     </div>
     
-    <!-- <Collage /> -->
+    <Collage />
     
-    <Nyheder />
     <Nyheder />
 
 

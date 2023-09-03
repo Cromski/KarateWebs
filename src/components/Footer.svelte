@@ -21,12 +21,12 @@
                 </div>
                 <div  class=" flex gap-7 pt-11">
                     <FooterSection title="Sider"> 
-                        <h1>Aktiviteter</h1>
-                        <h1>Om karate</h1>
-                        <h1>Kontakt os</h1>
-                        <h1>Nyheder</h1>
-                        <h1>Bliv medlem</h1>
-                        <h1>Galleri</h1>
+                        <a href="/aktiviteter">Aktiviteter</a>
+                        <a href="/om-karate">Om karate</a>
+                        <a href="/kontakt">Kontakt os</a>
+                        <a href="/nyheder">Nyheder</a>
+                        <a href="/bliv-medlem">Bliv medlem</a>
+                        <a href="/galleri">Galleri</a>
                     </FooterSection>
                     <FooterSection title="Ekstra"> 
                         <h1>GDPR</h1>
@@ -72,12 +72,12 @@
                     </div>
                     <div  class=" flex gap-7 pt-11">
                         <FooterSection title="Sider"> 
-                            <h1>Aktiviteter</h1>
-                            <h1>Om karate</h1>
-                            <h1>Kontakt os</h1>
-                            <h1>Nyheder</h1>
-                            <h1>Bliv medlem</h1>
-                            <h1>Galleri</h1>
+                            <a href="/aktiviteter">Aktiviteter</a>
+                            <a href="/om-karate">Om karate</a>
+                            <a href="/kontakt">Kontakt os</a>
+                            <a href="/nyheder">Nyheder</a>
+                            <a href="/bliv-medlem">Bliv medlem</a>
+                            <a href="/galleri">Galleri</a>
                         </FooterSection>
                         <FooterSection title="Ekstra"> 
                             <h1>GDPR</h1>
@@ -112,12 +112,12 @@
                 <h1>Email: info@budosportskarateishoj.dk</h1>
             </FooterSection>
             <FooterSection title="Sider"> 
-                <h1>Aktiviteter</h1>
-                <h1>Om karate</h1>
-                <h1>Kontakt os</h1>
-                <h1>Nyheder</h1>
-                <h1>Bliv medlem</h1>
-                <h1>Galleri</h1>
+                <a href="/aktiviteter">Aktiviteter</a>
+                <a href="/om-karate">Om karate</a>
+                <a href="/kontakt">Kontakt os</a>
+                <a href="/nyheder">Nyheder</a>
+                <a href="/bliv-medlem">Bliv medlem</a>
+                <a href="/galleri">Galleri</a>
             </FooterSection>
             <FooterSection title="Ekstra"> 
                 <h1>GDPR</h1>

@@ -3,6 +3,8 @@
     import Collage from '../components/Collage.svelte';
     import HexagonStack from '../components/HexagonStack.svelte';
     import Nyheder from '../components/Nyheder.svelte';
+    import MediaQuery from 'svelte-media-queries'
+
 </script>
 
 <div class=" grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -13,16 +15,45 @@
     </div>
     
     <Collage />
-    
-    <Nyheder />
 
-    
-    <div class=" mt-0 sm:-mt-[65px] lg:mt-[10%] 2xl:mt-[20%] 
-                 scale-100 sm:scale-75 lg:scale-100 2xl:scale-125 
-                 mx-auto lg:mx-0 xl:ml-[15%] 2xl:ml-[25%]  ">
-        <HexagonStack />
-    </div>
-    
+    <MediaQuery query='(max-width: 639px)' let:matches> <!-- was 641 -->
+        {#if matches}
+        <div class="
+                mt-12 sm:-mt-[65px] lg:mt-[10%] 2xl:mt-[20%] 
+                scale-100 sm:scale-75 lg:scale-100 2xl:scale-125 
+                mx-auto  ">
+            <HexagonStack />
+        </div>
+        <Nyheder />
+        {/if}
+    </MediaQuery>
+
+    <MediaQuery query='(min-width: 640px) and (max-width: 1023px)' let:matches> <!-- was 641 -->
+        {#if matches}
+        <Nyheder />
+        <div class="
+                mt-12 sm:-mt-[65px]
+                scale-100 sm:scale-75  
+                mx-auto ">
+            <HexagonStack />
+        </div>
+        {/if}
+    </MediaQuery>
+
+    <MediaQuery query='(min-width: 1024px)' let:matches> <!-- was 641 -->
+        {#if matches}
+        <Nyheder />
+        <div class="relative">
+            <div class=" absolute
+                    mt-[10%] 2xl:mt-[20%] 
+                    scale-100 2xl:scale-125 
+                    lgplus:ml-[8%] 2xl:ml-[15%] ">
+                <HexagonStack />
+            </div>
+        </div>
+        {/if}
+    </MediaQuery>
+
 </div>
 
 

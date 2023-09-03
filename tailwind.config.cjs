@@ -2,7 +2,11 @@
 module.exports = {
   content: [ './src/**/*.{html,svelte,ts,js}'],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'lgplus': '1060px',
+      }
+    },
     colors: {
       // transparent: 'transparent',
       textColor: '#cdcdcd',

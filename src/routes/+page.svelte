@@ -16,8 +16,10 @@
     
     <Nyheder />
 
-
-    <div class=" mt-0 sm:-mt-[65px] lg:mt-[10%] scale-100 sm:scale-75 lg:scale-100 mx-auto lg:mx-0 xl:ml-[15%]  ">
+    
+    <div class=" mt-0 sm:-mt-[65px] lg:mt-[10%] 2xl:mt-[20%] 
+                 scale-100 sm:scale-75 lg:scale-100 2xl:scale-125 
+                 mx-auto lg:mx-0 xl:ml-[15%] 2xl:ml-[25%]  ">
         <HexagonStack />
     </div>
     

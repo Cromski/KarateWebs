@@ -14,7 +14,7 @@
 {#if vis}
 <div use:clickOutside on:click_outside={handleClickOutside} class=" absolute bg-white w-[40%] h-[30%] top-32 border-b-black border-[1px] rounded">
     {#each $dayModalStore.event as e}
-        <h1 class="  ">{e.name}</h1>
+        <h1 class="  ">{e.title}</h1>
     {/each}
 </div>
 {/if}

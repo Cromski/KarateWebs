@@ -4,6 +4,8 @@
     import monthsStore from "../../stores/calendar/MonthsStore";
     import events from "../../calendarEvents.json"
     import dayModalStore from "../../stores/calendar/DayModalStore";
+    import EventStore from "../../stores/calendar/EventStore";
+
 
     export let month: number
     export let day: number
@@ -13,12 +15,14 @@
     const getUnixTime = (date: Date) => Math.floor(date.getTime() / 1000)
 
 
-    $: event = events.events.filter((e) => 
-    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) >= getUnixTime(new Date(`${e.startDate.split("-")[2]} ${e.startDate.split("-")[1]} ${e.startDate.split("-")[0]}`)) && 
-    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) <= getUnixTime(new Date(`${e.endDate.split("-")[2]} ${e.endDate.split("-")[1]} ${e.endDate.split("-")[0]}`)))
+    $: event = $EventStore.filter((e) => 
+    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) >= getUnixTime(new Date(e?.date1.substring(0, 10))) && 
+    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) <= getUnixTime(new Date(e?.date2.substring(0, 10))))
+
+    $: console.log(event, $EventStore)
 
     const listOfEventNames = (eventLst: any) => {
-        let theList = eventLst.map((e: any) => e.name)
+        let theList = eventLst.map((e: any) => e.title)
         if (theList.length > 1) {
             return `(${theList.length}): `+theList.join("; ")
         }

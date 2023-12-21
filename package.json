@@ -25,6 +25,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@azure/cosmos": "^4.0.0",
+		"dotenv": "^16.3.1",
 		"svelte-icons": "^2.1.0",
 		"svelte-media-queries": "^1.5.4"
 	}

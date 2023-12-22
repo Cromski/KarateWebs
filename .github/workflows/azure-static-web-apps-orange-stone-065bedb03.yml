@@ -33,7 +33,7 @@ jobs:
           output_location: "output/static" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          PUBLIC_API_KEY: ${{ secrets.}}
+          PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
         
 
   close_pull_request_job:

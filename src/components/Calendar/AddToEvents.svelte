@@ -10,7 +10,7 @@
     let date1: string
     let date2: string
 
-    $: today, console.log(today.toISOString())
+    //$: today, console.log(today.toISOString())
     $: today, date1 = formatDate(today)
     $: tomorrow, date2 = formatDate(tomorrow)
 

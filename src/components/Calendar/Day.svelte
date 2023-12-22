@@ -2,7 +2,6 @@
     
     import selectedYearStore from "../../stores/calendar/SelectedYearStore";
     import monthsStore from "../../stores/calendar/MonthsStore";
-    import events from "../../calendarEvents.json"
     import dayModalStore from "../../stores/calendar/DayModalStore";
     import EventStore from "../../stores/calendar/EventStore";
 
@@ -19,7 +18,7 @@
     getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) >= getUnixTime(new Date(e?.date1.substring(0, 10))) && 
     getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) <= getUnixTime(new Date(e?.date2.substring(0, 10))))
 
-    $: console.log(event, $EventStore)
+    //$: console.log(event, $EventStore)
 
     const listOfEventNames = (eventLst: any) => {
         let theList = eventLst.map((e: any) => e.title)

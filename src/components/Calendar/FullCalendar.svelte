@@ -7,8 +7,6 @@
     import monthsStore from "../../stores/calendar/MonthsStore";
     import FullDayModal from "./FullDayModal.svelte";
     import eventsStore from "../../stores/calendar/EventStore";
-
-    $: console.log(new Date($eventsStore[15]?.date1.substring(0, 10)))
     
     const daysInMonth = [31, new Date().getFullYear() == 366 ? 29 : 28,31,30,31,30,31,31,30,31,30,31];
 

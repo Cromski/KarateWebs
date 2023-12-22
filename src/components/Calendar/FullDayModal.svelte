@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { clickOutside } from '../../Extra/clickOutside';
+    import { clickOutside } from "../../Extra/ClickOutside.js";
+
+    
 
     import dayModalStore from "../../stores/calendar/DayModalStore";
 

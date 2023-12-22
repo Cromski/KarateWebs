@@ -2,7 +2,7 @@
 import { CosmosClient } from "@azure/cosmos";
 import { PUBLIC_API_KEY } from "$env/static/public";
 
-const cosmosClient = new CosmosClient({ endpoint: 'https://karatewebs.documents.azure.com:443/', key: PUBLIC_API_KEY });
+const cosmosClient = new CosmosClient({ endpoint: 'https://karatewebs.documents.azure.com:443/', key: PUBLIC_API_KEY })
 
 const querySpec = {
     query: "SELECT * FROM c",

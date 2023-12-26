@@ -50,7 +50,7 @@
 </script>
 
 
-<div class={weekday == "lør." ? ` bg-slate-200 flex w-full h-6` : weekday == "søn." ? ` bg-slate-400 flex w-full h-6` : ` bg-white flex h-6 w-full border-b-black border-b-[1px]`}>
+<div class={weekday == "lør." ? `text-textColor bg-slate-200 flex w-full h-6` : weekday == "søn." ? `text-textColor bg-slate-400 flex w-full h-6` : ` bg-white flex h-6 w-full border-b-black border-b-[1px]`}>
     <div class=" min-w-[44px] max-w-[44px] bg-slate-800 text-gray-300 text-xs leading-6">
         <h1 class=" ml-1 inline-block">{day}.</h1>
         <h1 class=" mr-1 inline-block float-right">{convertToShorterWeekday(weekday)}</h1>
@@ -58,7 +58,7 @@
     {#if event == undefined}
         <h1 class=" mr-auto"> </h1>
     {:else}
-        <button class=" ml-1 mr-auto truncate " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
+        <button class=" ml-1 mr-auto truncate text-textColor " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
     {/if}
     {#if weekday == "man."}
         <h1 class=" mr-1 w-4 text-xs">{getWeekNumber()}</h1>

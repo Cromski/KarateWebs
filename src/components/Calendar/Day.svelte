@@ -10,9 +10,10 @@
     export let day: number
 
     $: weekday = moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format('ddd')
-
+    $: console.log("weee: " + weekday)
     
-    $: event = $EventStore.filter((e) => moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))
+    $: event = $EventStore.filter((e) => 
+        moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))
     
     // $EventStore.forEach((e) => console.log(`this date: ${moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format("MMM Do YY")} \n is between: ${moment(e?.date1).format("MMM Do YY")} and \n ${moment(e?.date2).format("MMM Do YY")}`))
 

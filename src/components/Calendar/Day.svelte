@@ -9,7 +9,7 @@
     export let month: number
     export let day: number
 
-    $: weekday = moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format('ddd')
+    $: weekday = moment(`${$selectedYearStore}/${$monthsStore[month]}/${day}`).format('ddd')
     $: console.log("weee: " + weekday)
     
     $: event = $EventStore.filter((e) => 

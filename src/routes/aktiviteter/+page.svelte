@@ -6,6 +6,7 @@
 
     onMount(() => {
         EventStore.init();
+        console.log("events, inited")
     })
 
 </script>

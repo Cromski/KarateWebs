@@ -1,7 +1,7 @@
 <script lang="ts">
     import { createEvent } from "../../data/events";
     import EventStore from "../../stores/calendar/EventStore";
-    import moment from 'moment'
+    import moment from 'moment-timezone'
 
     let today = moment()
     let tomorrow = moment().add(1,'days');
@@ -23,8 +23,8 @@
     $: date2, item = {
         club: "BSI",
         title: title,
-        date1: moment(date1).toISOString(),
-        date2: moment(date2).toISOString()
+        date1: moment(date1).tz("Europe/Copenhagen").toISOString(),
+        date2: moment(date2).tz("Europe/Copenhagen").toISOString()
     }
 
     const createEventAux = async () => {

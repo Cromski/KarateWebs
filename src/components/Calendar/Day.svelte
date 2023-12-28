@@ -11,13 +11,10 @@
 
     $: weekday = moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format('ddd')
 
-    console.log(moment(`${moment().year()}-02`, "YYYY-MM").daysInMonth())
-
-    $: event = $EventStore.filter((e) => 
-    moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) >= moment(e?.date1.substring(0, 10)) && 
-    moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) <= moment(e?.date2.substring(0, 10)))
-
-    //$: console.log(event, $EventStore)
+    
+    $: event = $EventStore.filter((e) => moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))
+    
+    // $EventStore.forEach((e) => console.log(`this date: ${moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format("MMM Do YY")} \n is between: ${moment(e?.date1).format("MMM Do YY")} and \n ${moment(e?.date2).format("MMM Do YY")}`))
 
     const listOfEventNames = (eventLst: any) => {
         let theList = eventLst.map((e: any) => e.title)
@@ -37,7 +34,7 @@
         else if (weekday === "Thu") return "To"
         else if (weekday === "Fri")  return "Fr"
         else if (weekday === "Sat")  return "Lø"
-        else                          return "Søn"
+        else                          return "Sø"
     }
 
 </script>

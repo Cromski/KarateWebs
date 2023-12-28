@@ -2,11 +2,15 @@
 
     import Day from "./Day.svelte";
     import selectedMonthsStore from "../../stores/calendar/SelectedMonthsStore";
+    import selectedYearStore from "../../stores/calendar/SelectedYearStore";
     import monthsStore from "../../stores/calendar/MonthsStore";
+    
+    import moment from 'moment'
 
     export let month: number
-    export let daysInMonth: number
+    let daysInMonth: number;
 
+    $: $selectedMonthsStore, daysInMonth = moment(`${$selectedYearStore}-${month+1}`, "YYYY-MM").daysInMonth()
 
 </script>
 

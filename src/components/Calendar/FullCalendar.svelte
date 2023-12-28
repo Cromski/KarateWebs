@@ -10,8 +10,6 @@
     import MediaQuery from 'svelte-media-queries'
     import moment from 'moment'
     
-    const daysInMonth = [31, moment(`${moment().year()}-02`, "YYYY-MM").daysInMonth(),31,30,31,30,31,31,30,31,30,31];
-
     const viewSizes = [
         {name: "half screen", value: 50},
         {name: "3 quarters", value: 75},
@@ -36,10 +34,15 @@
         viewSize = newValue
     }
 
+    const setSelectedYear = (newVal: number) => {
+        selectedYearStore.set(newVal)
+        $selectedYearStore = $selectedYearStore
+    }
+
 </script>
 
 {#each Array(2) as _, i}
-    <button on:click={() => selectedYearStore.set(moment().year()+i)}>{moment().year()+i}</button>
+    <button on:click={() => setSelectedYear(moment().year()+i)}>{moment().year()+i}</button>
 {/each}
 
 {#each $monthsStore as month, i}
@@ -55,7 +58,7 @@
         <div class=" w-full [overflow:overlay] ">
             <div style={`width: 800px`} class=" relative mx-auto flex justify-center">
                 {#each $selectedMonthsStore as month}
-                    <Month month={month} daysInMonth={daysInMonth[month]} />
+                    <Month month={month} />
                 {/each}
                 <FullDayModal />
             </div>
@@ -67,7 +70,7 @@
     {#if matches}
         <div style={`width: ${viewSize}%`} class=" relative mx-auto flex justify-center">
             {#each $selectedMonthsStore as month}
-                <Month month={month} daysInMonth={daysInMonth[month]} />
+                <Month month={month} />
             {/each}
             <FullDayModal />
         </div>

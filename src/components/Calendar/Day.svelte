@@ -11,6 +11,8 @@
 
     $: weekday = moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format('ddd')
 
+    console.log(moment(`${moment().year()}-02`, "YYYY-MM").daysInMonth())
+
     $: event = $EventStore.filter((e) => 
     moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) >= moment(e?.date1.substring(0, 10)) && 
     moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) <= moment(e?.date2.substring(0, 10)))

@@ -1,26 +1,30 @@
 <script lang="ts">
     import { createEvent } from "../../data/events";
     import EventStore from "../../stores/calendar/EventStore";
+    import moment from 'moment'
 
-    let today = new Date()
-    let tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000))
-    const formatDate = (date: Date) => `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+    let today = moment()
+    let tomorrow = moment().add(1,'days');
+    const formatDate = (date: Moment) => `${date.year()}-${date.month()+1}-${date.date()}`
 
     let title: string = "sd"
-    let date1: string
-    let date2: string
+    let date1: string;
+    let date2: string;
 
     //$: today, console.log(today.toISOString())
     $: today, date1 = formatDate(today)
     $: tomorrow, date2 = formatDate(tomorrow)
 
-    let item;
+    $: console.log(date1)
+    $: console.log(date2)
+
+    let item: object;
     
     $: date2, item = {
         club: "BSI",
         title: title,
-        date1: new Date(date1),
-        date2: new Date(date2)
+        date1: moment(date1).toISOString(),
+        date2: moment(date2).toISOString()
     }
 
     const createEventAux = async () => {

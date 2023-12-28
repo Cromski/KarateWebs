@@ -8,8 +8,9 @@
     import FullDayModal from "./FullDayModal.svelte";
     import eventsStore from "../../stores/calendar/EventStore";
     import MediaQuery from 'svelte-media-queries'
+    import moment from 'moment'
     
-    const daysInMonth = [31, new Date().getFullYear() == 366 ? 29 : 28,31,30,31,30,31,31,30,31,30,31];
+    const daysInMonth = [31, moment(`${moment().year()}-02`, "YYYY-MM").daysInMonth(),31,30,31,30,31,31,30,31,30,31];
 
     const viewSizes = [
         {name: "half screen", value: 50},
@@ -38,7 +39,7 @@
 </script>
 
 {#each Array(2) as _, i}
-    <button on:click={() => selectedYearStore.set(new Date().getFullYear()+i)}>{new Date().getFullYear()+i}</button>
+    <button on:click={() => selectedYearStore.set(moment().year()+i)}>{moment().year()+i}</button>
 {/each}
 
 {#each $monthsStore as month, i}

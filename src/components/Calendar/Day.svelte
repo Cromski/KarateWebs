@@ -11,12 +11,9 @@
 
     $: weekday = moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format('ddd')
 
-    const getUnixTime = (date: Date) => Math.floor(date.getTime() / 1000)
-
-
     $: event = $EventStore.filter((e) => 
-    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) >= getUnixTime(new Date(e?.date1.substring(0, 10))) && 
-    getUnixTime(new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`)) <= getUnixTime(new Date(e?.date2.substring(0, 10))))
+    moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) >= moment(e?.date1.substring(0, 10)) && 
+    moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`) <= moment(e?.date2.substring(0, 10)))
 
     //$: console.log(event, $EventStore)
 
@@ -29,13 +26,7 @@
 
     }
 
-    const getWeekNumber = () => {
-        var date = new Date(`${$selectedYearStore} ${$monthsStore[month]} ${day}`);
-        date.setHours(0,0,0,0)
-        date.setDate(date.getDate() +3 - (date.getDay() +6) % 7)
-        var week1 = new Date(date.getFullYear(), 0, 4)
-        return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() +6 ) % 7) / 7);
-    }
+    const getWeekNumber = () => moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).week()
 
     const convertToShorterWeekday = (weekday: string) => {
         if (weekday === "Mon")       return "Ma"
@@ -44,7 +35,7 @@
         else if (weekday === "Thu") return "To"
         else if (weekday === "Fri")  return "Fr"
         else if (weekday === "Sat")  return "Lø"
-        else                          return "Sø"
+        else                          return "Søn"
     }
 
 </script>
@@ -60,7 +51,7 @@
     {:else}
         <button class=" ml-1 mr-auto truncate text-textColor " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
     {/if}
-    {#if weekday == "man."}
+    {#if weekday == "Mon"}
         <h1 class=" mr-1 w-4 text-xs">{getWeekNumber()}</h1>
     {/if}
     

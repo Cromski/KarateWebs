@@ -50,6 +50,7 @@
         <h1 class=" mr-auto"> </h1>
     {:else}
         <button class=" ml-1 mr-auto truncate text-textColor " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
+        <h1>{weekday}</h1>
     {/if}
     {#if weekday == "Mon"}
         <h1 class=" mr-1 w-4 text-xs">{getWeekNumber()}</h1>

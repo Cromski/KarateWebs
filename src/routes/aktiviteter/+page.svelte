@@ -2,6 +2,7 @@
     import FullCalendar from "../../components/Calendar/FullCalendar.svelte";
     import AddToEvents from "../../components/Calendar/AddToEvents.svelte";
     import EventStore from "../../stores/calendar/EventStore";
+    import TrainingTimes from "../../components/TrainingTimes.svelte";
     import { onMount } from "svelte";
 
     onMount(() => {
@@ -11,5 +12,8 @@
 
 </script>
 
+<div class="my-7">
+    <TrainingTimes />
+</div>
 <FullCalendar />
 <AddToEvents />

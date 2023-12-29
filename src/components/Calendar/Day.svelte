@@ -9,8 +9,12 @@
     export let month: number
     export let day: number
 
-    $: weekday = moment(`${$selectedYearStore}-${month+1}-${day}`).format('dd')
-    $: console.log("weee: " + weekday)
+    function zeroPad(number:number) {
+        return number < 10 ? '0' + number : number;
+    }
+
+    $: weekday = moment(`${$selectedYearStore}-${zeroPad(month+1)}-${zeroPad(day)}`, "YYYY-MM-DD").format('dd')
+    $: console.log("weee: " + `${$selectedYearStore}-${zeroPad(month+1)}-${zeroPad(day)}`)
     
     $: event = $EventStore.filter((e) => 
         moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))

@@ -11,12 +11,13 @@
     import moment from 'moment'
     
     const viewSizes = [
-        {name: "half screen", value: 50},
-        {name: "3 quarters", value: 75},
-        {name: "full screen", value: 100},
+        {name: "1/2", value: 50},
+        {name: "3/4", value: 75},
+        {name: "1/1", value: 100},
     ]
 
     let viewSize = 75
+    let defaultYear = moment().year()
 
     const updateSelectedMonths = (month: number) => {
         if ($selectedMonthsStore.includes(month)) {
@@ -41,19 +42,22 @@
 
 </script>
 
-{#each Array(2) as _, i}
-    <button on:click={() => setSelectedYear(moment().year()+i)}>{moment().year()+i}</button>
-{/each}
+<div class="flex ml-[12%] mb-6 gap-7">
+    <input class="py-2 px-4 w-24 text-center border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="number" min="2023" bind:value={defaultYear} on:change={() => setSelectedYear(defaultYear)}>
 
-{#each $monthsStore as month, i}
-    <button on:click={() => updateSelectedMonths(i)}>{month}</button>
-{/each} 
+    <div class="grid grid-cols-4 gap-4">
+        {#each $monthsStore as month, i}
+          <button
+            on:click={() => updateSelectedMonths(i)}
+            class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+          >
+            {month}
+          </button>
+        {/each}
+      </div>
+</div>
 
-{#each viewSizes as viewSize}
-    <button on:click={() => updateViewSize(viewSize.value)}>{viewSize.name}</button>
-{/each}
-
-<MediaQuery query='(max-width: 767px)' let:matches> <!-- was 641 -->
+<MediaQuery query='(max-width: 767px)' let:matches> <!-- mobile -->
     {#if matches}
         <div class=" w-full [overflow:overlay] ">
             <div style={`width: 800px`} class=" flex">
@@ -66,8 +70,12 @@
     {/if}
 </MediaQuery>
 
-<MediaQuery query='(min-width: 768px)' let:matches> <!-- was 641 -->
+
+<MediaQuery query='(min-width: 768px)' let:matches> <!-- pc -->
     {#if matches}
+        {#each viewSizes as viewSize}
+            <button class=" my-6 py-2 px-4 float-right border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 hover:bg-gray-100" on:click={() => updateViewSize(viewSize.value)}>{viewSize.name}</button>
+        {/each}
         <div style={`width: ${viewSize}%`} class=" relative mx-auto flex justify-center">
             {#each $selectedMonthsStore as month}
                 <Month month={month} />

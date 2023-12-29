@@ -10,6 +10,7 @@ module.exports = {
     colors: {
       // transparent: 'transparent',
       textColor: '#cdcdcd',
+      darkTextColor: '#343434',
       backgroundColor: '#0B101E',
       backgroundLighter: '#212937',
       backgroundFooter: '#869FA9',

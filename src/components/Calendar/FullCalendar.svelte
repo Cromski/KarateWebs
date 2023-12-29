@@ -42,9 +42,9 @@
 
 </script>
 
-<h1 class=" text-5xl ml-32 font-bold text-textColor">Kalender</h1>
+<h1 class=" text-5xl text-center md:text-left md:ml-32 font-bold text-textColor">Kalender</h1>
 
-<div class="flex ml-20 md:ml-44 my-6">
+<div class="flex ml-6 md:ml-44 my-6">
     <input class="py-2 px-4 w-24 text-center border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="number" min="2023" bind:value={defaultYear} on:change={() => setSelectedYear(defaultYear)}>
 
     <div class="grid grid-cols-4">

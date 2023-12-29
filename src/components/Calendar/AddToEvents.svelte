@@ -58,9 +58,9 @@
 </script>
 
 
-<div class=" w-3/12 mt-5 mx-auto flex flex-col space-y-4">
+<div class=" w-1/2 md:w-3/12 mt-5 mx-auto flex flex-col space-y-4">
     <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="text" bind:value={title} />
     <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="date" bind:value={date1} min={'2023-01-01'} on:change={() => secondDate.focus()} />
     <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="date" bind:value={date2} min={date1} bind:this={secondDate} />
-    <button class=" py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200" on:click={() => createEventAux()}>Add</button>
+    <button class="py-2 px-4 bg-backgroundLighter text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200" on:click={() => createEventAux()}>Add</button>
 </div>

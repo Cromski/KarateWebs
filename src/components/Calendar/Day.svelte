@@ -9,7 +9,7 @@
     export let month: number
     export let day: number
 
-    $: weekday = moment(`${$selectedYearStore}/${$monthsStore[month]}/${day}`).format('ddd')
+    $: weekday = moment(`${$selectedYearStore}-${month+1}-${day}`).format('dd')
     $: console.log("weee: " + weekday)
     
     $: event = $EventStore.filter((e) => 
@@ -29,19 +29,19 @@
     const getWeekNumber = () => moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).week()
 
     const convertToShorterWeekday = (weekday: string) => {
-        if (weekday === "Mon")       return "Ma"
-        else if (weekday === "Tue") return "Ti"
-        else if (weekday === "Wed")  return "On"
-        else if (weekday === "Thu") return "To"
-        else if (weekday === "Fri")  return "Fr"
-        else if (weekday === "Sat")  return "Lø"
+        if (weekday === "Mo")       return "Ma"
+        else if (weekday === "Tu") return "Ti"
+        else if (weekday === "We")  return "On"
+        else if (weekday === "Th") return "To"
+        else if (weekday === "Fr")  return "Fr"
+        else if (weekday === "Sa")  return "Lø"
         else                          return "Sø"
     }
 
 </script>
 
 
-<div class={weekday == "Sat" ? `text-textColor bg-slate-200 flex w-full h-6` : weekday == "Sun" ? `text-textColor bg-slate-400 flex w-full h-6` : ` bg-white flex h-6 w-full border-b-black border-b-[1px]`}>
+<div class={weekday == "Sa" ? `text-textColor bg-slate-200 flex w-full h-6` : weekday == "Su" ? `text-textColor bg-slate-400 flex w-full h-6` : ` bg-white flex h-6 w-full border-b-black border-b-[1px]`}>
     <div class=" min-w-[44px] max-w-[44px] bg-slate-800 text-gray-300 text-xs leading-6">
         <h1 class=" ml-1 inline-block">{day}.</h1>
         <h1 class=" mr-1 inline-block float-right">{convertToShorterWeekday(weekday)}</h1>
@@ -52,7 +52,7 @@
         <button class=" ml-1 mr-auto truncate text-textColor " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
         <h1>{weekday}</h1>
     {/if}
-    {#if weekday == "Mon"}
+    {#if weekday == "Mo"}
         <h1 class=" mr-1 w-4 text-xs">{getWeekNumber()}</h1>
     {/if}
     

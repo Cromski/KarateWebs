@@ -56,7 +56,7 @@
 <MediaQuery query='(max-width: 767px)' let:matches> <!-- was 641 -->
     {#if matches}
         <div class=" w-full [overflow:overlay] ">
-            <div style={`width: 800px`} class=" relative mx-auto flex justify-center">
+            <div style={`width: 800px`} class=" flex">
                 {#each $selectedMonthsStore as month}
                     <Month month={month} />
                 {/each}

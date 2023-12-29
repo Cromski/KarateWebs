@@ -17,11 +17,10 @@
 
     $: weekday = date.format('dd')
     
-    $: event = $EventStore.filter((e) => 
-        date.isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))
+    $: event = $EventStore.filter((e) => date.isBetween(moment(e?.date1).add(-1,'days'), moment(e?.date2).add(1,'days')))
     
 
-    //$EventStore.forEach((e) => console.log(`this date: ${moment(`${$selectedYearStore} ${$monthsStore[month]} ${day}`).format("MMM Do YY")} \n is between: ${moment(e?.date1).format("MMM Do YY")} and \n ${moment(e?.date2).format("MMM Do YY")}`))
+    //$EventStore.forEach((e) => console.log(e?.date1))
 
 
     const listOfEventNames = (eventLst: any) => {
@@ -57,7 +56,6 @@
         <h1 class=" mr-auto"> </h1>
     {:else}
         <button class=" ml-1 mr-auto truncate text-textColor " on:click={() => dayModalStore.set({visible: true, event: event})} >{ listOfEventNames(event) }</button> <!--  day+"-"+month+"-"+$selectedYearStore -->
-        <h1>{weekday}</h1>
     {/if}
     {#if weekday == "Mo"}
         <h1 class=" mr-1 w-4 text-xs">{getWeekNumber()}</h1>

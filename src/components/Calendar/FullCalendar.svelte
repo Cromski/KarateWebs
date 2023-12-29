@@ -44,16 +44,16 @@
 
 <h1 class=" text-5xl ml-32 font-bold text-textColor">Kalender</h1>
 
-<div class="flex ml-44 my-6 gap-7">
+<div class="flex ml-20 md:ml-44 my-6">
     <input class="py-2 px-4 w-24 text-center border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="number" min="2023" bind:value={defaultYear} on:change={() => setSelectedYear(defaultYear)}>
 
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-4">
         {#each $monthsStore as month, i}
           <button
             on:click={() => updateSelectedMonths(i)}
             class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
           >
-            {month}
+            {month.substring(0,3)}
           </button>
         {/each}
       </div>

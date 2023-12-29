@@ -11,17 +11,17 @@
     let realDate2 = moment().add(1,'days');
     const formatDate = (date: Moment) => `${date.year()}-${zeroPad(date.month()+1)}-${zeroPad(date.date())}`
 
-    let title: string = "sd"
+    let title: string = ""
     let date1: string;
     let date2: string;
-    let secondDate
+    let secondDate; // second date input reference
 
     //$: today, console.log(today.toISOString())
     $: realDate1, date1 = formatDate(realDate1)
     $: realDate2, date2 = formatDate(realDate2)
 
-    $: date1, realDate1.set(moment(date1, "YYYY-MM-DD").toObject())
-    $: date2, realDate2.set(moment(date2, "YYYY-MM-DD").toObject())
+    // $: date1, realDate1.set(moment(date1, "YYYY-MM-DD").toObject())
+    // $: date2, realDate2.set(moment(date2, "YYYY-MM-DD").toObject())
     
     // $: date1, if (date1)
 
@@ -40,15 +40,27 @@
     }
 
     const createEventAux = async () => {
+        if (!item.title) {
+            alert("ERROR - No event title.")
+            return
+        } else if (moment(date2).isBefore(moment(date1))) {
+            alert("ERROR - Second date is earlier than first date.")
+            return
+        }
+
         await createEvent(item)
+        title = ""
+        date1 = formatDate(realDate1)
+        date2 = formatDate(realDate2)
         EventStore.init()
     }
 
 </script>
 
-<div >
-    <input type="text" bind:value={title} />
-    <input type="date" bind:value={date1} on:change={() => secondDate.focus()} />
-    <input type="date" bind:value={date2} min={date1} bind:this={secondDate} />
-    <button class=" bg-textColor" on:click={() => createEventAux()}>Add</button>
+
+<div class=" w-3/12 mt-5 mx-auto flex flex-col space-y-4">
+    <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="text" bind:value={title} />
+    <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="date" bind:value={date1} on:change={() => secondDate.focus()} />
+    <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="date" bind:value={date2} min={date1} bind:this={secondDate} />
+    <button class=" py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200" on:click={() => createEventAux()}>Add</button>
 </div>

@@ -4,6 +4,9 @@
     export let text: string;
     export let imgPath: string;
     export let path: string;
+    export let bgSize: number;
+    export let x: number;
+    export let y: number;
 //     export let value: number;
 
 
@@ -13,8 +16,8 @@
      class={` relative mask mask-hexagon w-40 aspect-square group bg-slate-600
      hover:scale-[110%] hover:z-10 hover:cursor-pointer select-none transition duration-75 ease-out`}>
      <a href={path}>
-          <div style={`background-image: url('${imgPath}')`} 
-               class="absolute w-full h-full bg-cover " />
+          <div style={`background-image: url('${imgPath}'); background-size: ${bgSize}px; background-position: left ${x}rem/* -32px */ top ${y}rem/* -48px */;`} 
+               class=" absolute w-full h-full " />
           <h1 class=" absolute bg-black bg-opacity-50 text-textColor text-center bottom-0 w-full h-2/5
                          group-hover:h-[45%] transition-[height] duration-75 ease-in-out">{text}</h1>
      </a>

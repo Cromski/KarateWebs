@@ -18,6 +18,6 @@
     </h1>
 </div>
 
-<div class="text-center">
+<div class="text-center md:text-left md:ml-32">
     <span class=" font-bold text-sm ">*Alle træninger foregår i den lille gymnastik sal på Strandgårdskolen*</span>
 </div>

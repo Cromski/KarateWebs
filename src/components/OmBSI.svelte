@@ -2,9 +2,9 @@
 
 </script>
 
-<h1 class=" text-5xl text-center md:text-left md:ml-32 font-bold text-textColor">Om Budo Sportskarate Ishøj</h1>
+<h1 class=" text-4xl md:text-5xl text-center md:text-left md:ml-32 font-bold text-textColor">Om Budo Sportskarate Ishøj</h1>
 
-<div class=" ml-6 md:ml-48 mt-7 w-1/2">
+<div class=" ml-10 md:ml-48 mt-7 w-4/5 md:w-1/2">
     <h1 class=" leading-6">
         Vi er en traditionel karateklub, som træner karate under stilarten Wado Ryu. <br><br>
         

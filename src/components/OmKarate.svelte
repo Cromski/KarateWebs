@@ -4,7 +4,7 @@
 
 <h1 class=" text-5xl text-center md:text-left md:ml-32 font-bold text-textColor">Om karate</h1>
 
-<div class=" ml-6 md:ml-48 mt-7 w-1/2">
+<div class=" ml-10 md:ml-48 mt-7 w-4/5 md:w-1/2">
     <h1 class=" leading-6">
 Karatetræning er mere end blot selvforsvar. Det er en rejse, hvor kroppen og sindet trænes i harmoni. Gennem fysisk og mental træning lærer man at håndtere udfordrende situationer samtidig med, at man konstant stræber efter at forbedre sig selv.<br><br>
 

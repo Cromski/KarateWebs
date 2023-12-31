@@ -9,12 +9,12 @@ module.exports = {
     },
     colors: {
       // transparent: 'transparent',
-      textColor: '#cdcdcd',
-      darkTextColor: '#343434',
-      backgroundColor: '#0B101E',
+      textColor:         '#cdcdcd',
+      darkTextColor:     '#343434',
+      backgroundColor:   '#0B101E',
       backgroundLighter: '#212937',
-      backgroundFooter: '#869FA9',
-      backgroundInfo: '#406E8E',
+      backgroundFooter:  '#869FA9',
+      backgroundInfo:    '#406E8E',
       black: '#000',
       white: '#fff',
       // gray: {

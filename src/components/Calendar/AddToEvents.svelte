@@ -56,7 +56,14 @@
     }
 
 </script>
-
+<!-- <div class="toast toast-top toast-center">
+    <div class=" alert alert-success">
+        <span>Message sent successfully.</span>
+    </div>
+    <div class=" alert alert-error">
+        <span>Message sent successfully.</span>
+    </div>
+</div> -->
 
 <div class=" w-1/2 md:w-3/12 mt-5 mx-auto flex flex-col space-y-4">
     <input class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" type="text" bind:value={title} />

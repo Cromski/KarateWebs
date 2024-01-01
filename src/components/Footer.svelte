@@ -2,6 +2,7 @@
     import FooterSection from "./FooterSection.svelte";
     import MediaQuery from 'svelte-media-queries'
     import tilt from 'svelte-tilt'
+    import NavBarOpen from "../stores/NavMenuOpenStore";
 
 </script>
 
@@ -21,12 +22,12 @@
                 </div>
                 <div  class=" flex gap-7 pt-11">
                     <FooterSection title="Sider"> 
-                        <a href="/aktiviteter">Aktiviteter</a>
-                        <a href="/om-karate">Om karate</a>
-                        <a href="/kontakt">Kontakt os</a>
-                        <a href="/nyheder">Nyheder</a>
-                        <a href="/bliv-medlem">Bliv medlem</a>
-                        <a href="/galleri">Galleri</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/aktiviteter">Aktiviteter</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/om-karate">Om karate</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/kontakt">Kontakt os</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/nyheder">Nyheder</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/bliv-medlem">Bliv medlem</a>
+                        <a on:click={() => NavBarOpen.set(false)} href="/galleri">Galleri</a>
                     </FooterSection>
                     <FooterSection title="Ekstra"> 
                         <h1>GDPR</h1>

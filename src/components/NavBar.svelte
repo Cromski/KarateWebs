@@ -1,9 +1,8 @@
 <script lang="ts">
     import MdMenu from 'svelte-icons/md/MdMenu.svelte'
+    import NavBarOpen from '../stores/NavMenuOpenStore';
 
-    let navBarOpen = true
-
-    $: console.log(navBarOpen)
+    $: console.log($NavBarOpen)
 
     const navBarItems = [
         {text: "Aktiviteter", route: "/aktiviteter"},
@@ -14,7 +13,6 @@
         {text: "Galleri", route: "/galleri"},
     ]
 
-
 </script>
 
 <div class="w-full h-24 bg-backgroundLighter flex justify-between relative">
@@ -22,13 +20,13 @@
         <img src="/bsi-logo.png" alt="" class=" ml-10 h-4/5 inline-block my-auto">
     </a>
     <!-- small screen -->
-    <button class=" md:hidden inline-block scale-50 " on:click={() => navBarOpen = !navBarOpen}>
+    <button class=" md:hidden inline-block scale-50 " on:click={() => NavBarOpen.set(!$NavBarOpen)}>
         <MdMenu />
     </button>
-    {#if navBarOpen}
+    {#if $NavBarOpen}
         <div class="absolute top-[98px] md:hidden z-10 bg-backgroundLighter w-full grid grid-cols-1 ">
             {#each navBarItems as item}
-                <a class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => navBarOpen = false} href={item.route}>{item.text}</a>
+                <a class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => NavBarOpen.set(false)} href={item.route}>{item.text}</a>
             {/each}
         </div>
     {/if}

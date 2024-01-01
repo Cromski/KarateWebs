@@ -2,6 +2,8 @@
     import { createEvent } from "../../data/events";
     import EventStore from "../../stores/calendar/EventStore";
     import moment from 'moment-timezone'
+    import toast, { Toaster } from 'svelte-french-toast';
+
 
     function zeroPad(number:number) {
         return number < 10 ? '0' + number : number;
@@ -41,21 +43,25 @@
 
     const createEventAux = async () => {
         if (!item.title) {
-            alert("ERROR - No event title.")
+            toast.error("ERROR - No event title.")
             return
         } else if (moment(date2).isBefore(moment(date1))) {
-            alert("ERROR - Second date is earlier than first date.")
+            toast.error("ERROR - Second date is earlier than first date.")
             return
         }
-
+        
         await createEvent(item)
         title = ""
         date1 = formatDate(realDate1)
         date2 = formatDate(realDate2)
         EventStore.init()
+        toast.success("SUCCESS - Event was added.");
     }
 
 </script>
+
+<Toaster />
+
 <!-- <div class="toast toast-top toast-center">
     <div class=" alert alert-success">
         <span>Message sent successfully.</span>

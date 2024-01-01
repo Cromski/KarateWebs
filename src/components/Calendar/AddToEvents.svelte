@@ -18,19 +18,14 @@
     let date2: string;
     let secondDate; // second date input reference
 
-    //$: today, console.log(today.toISOString())
     $: realDate1, date1 = formatDate(realDate1)
     $: realDate2, date2 = formatDate(realDate2)
+    $: date1, moment(date2).isBefore(moment(date1)) ? date2 = date1 : date2 = date2
 
-    // $: date1, realDate1.set(moment(date1, "YYYY-MM-DD").toObject())
-    // $: date2, realDate2.set(moment(date2, "YYYY-MM-DD").toObject())
-    
-    // $: date1, if (date1)
-
-    $: console.log("date1: " + date1)
-    $: console.log("date2: " + date2)
-    $: console.log("realDate1: " + realDate1)
-    $: console.log("realDate2: " + realDate2)
+    // $: console.log("date1: " + date1)
+    // $: console.log("date2: " + date2)
+    // $: console.log("realDate1: " + realDate1)
+    // $: console.log("realDate2: " + realDate2)
 
     let item: object;
     

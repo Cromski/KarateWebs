@@ -17,7 +17,7 @@
 </script>
 
 <div class="w-full h-24 bg-backgroundLighter flex justify-between relative">
-    <a class=" flex" href="/">
+    <a on:click={() => NavBarOpen.set(false)} class=" flex" href="/">
         <img src="/bsi-logo.png" alt="" class=" ml-10 h-4/5 inline-block my-auto">
     </a>
     <!-- small screen -->

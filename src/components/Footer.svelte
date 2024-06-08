@@ -15,7 +15,7 @@
                 <div  class=" pt-11">
                     <FooterSection title="Kontakt information"> 
                         <h1>Budo Sportskarate Ishøj</h1>
-                        <h1>Ishøj Søvej 200, 2635 Ishøj</h1>
+                        <a target="_blank" href="http://maps.google.com/?q=Ishøj Søvej 200, 2635 Ishøj">Ishøj Søvej 200, 2635 Ishøj</a>
                         <h1>tlf: +45 4236 3300</h1>
                         <h1>Email: info@budosportskarateishoj.dk</h1>
                     </FooterSection>
@@ -66,7 +66,7 @@
                     <div  class=" pt-11">
                         <FooterSection title="Kontakt information"> 
                             <h1>Budo Sportskarate Ishøj</h1>
-                            <h1>Ishøj Søvej 200, 2635 Ishøj</h1>
+                            <a target="_blank" href="http://maps.google.com/?q=Ishøj Søvej 200, 2635 Ishøj">Ishøj Søvej 200, 2635 Ishøj</a>
                             <h1>tlf: +45 4236 3300</h1>
                             <h1>Email: info@budosportskarateishoj.dk</h1>
                         </FooterSection>
@@ -108,7 +108,7 @@
     
             <FooterSection title="Kontakt information"> 
                 <h1>Budo Sportskarate Ishøj</h1>
-                <h1>Ishøj Søvej 200, 2635 Ishøj</h1>
+                <a target="_blank" href="http://maps.google.com/?q=Ishøj Søvej 200, 2635 Ishøj" >Ishøj Søvej 200, 2635 Ishøj</a>
                 <h1>tlf: +45 4236 3300</h1>
                 <h1>Email: info@budosportskarateishoj.dk</h1>
             </FooterSection>

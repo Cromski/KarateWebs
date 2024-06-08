@@ -16,7 +16,7 @@
     
     <Collage />
 
-    <MediaQuery query='(max-width: 639px)' let:matches> <!-- was 641 -->
+    <MediaQuery query='(max-width: 639px)' let:matches> <!--- was 641 --->
         {#if matches}
         <div class="
                 mt-12 sm:-mt-[65px] lg:mt-[10%] 2xl:mt-[20%] 

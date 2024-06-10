@@ -8,7 +8,14 @@
     let blogTitle = ""
     let blogBody = ""
 
-    let item: object;
+    interface news {
+        club: string,
+        date: string,
+        title: string,
+        body: string
+    }
+
+    let item: news;
     
     $: blogTitle, blogBody, item = {
         club: "BSI",
@@ -27,6 +34,7 @@
         }
         
         await createNews(item)
+        console.log(item.title+item.body)
         blogTitle = ""
         blogBody = ""
         NewsStore.init()

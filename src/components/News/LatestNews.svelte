@@ -1,13 +1,16 @@
 <script lang="ts">
-    export let latestNews
+    import moment from "moment";
+    import NewsStore from "../../stores/news/NewsStore";
+    import OneNews from "./OneNews.svelte";
+    
+
 
 </script>
 
 
-<div>
+{#each [...$NewsStore].reverse() as news, index}
+    {#if news}
+        <OneNews news={news} />
+    {/if}
+{/each}
 
-    <h1>{latestNews.title}</h1>
-    <h1>{latestNews.body}</h1>
-    <h1>{latestNews.date}</h1>
-
-</div>

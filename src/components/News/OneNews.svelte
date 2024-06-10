@@ -7,10 +7,10 @@
 
 </script>
 
-<div class=" text-darkTextColor bg-textColor w-3/5 my-5 mx-auto rounded-md relative">
-    <h1 class="absolute right-3">{formatISOstring(news.date)}</h1>
-    <h1 class=" text-2xl text-center">{news.title}</h1>
-    <div class="w-4/5 mx-auto">
-        <h1 class=" ">{news.body}</h1>
+<div class=" text-darkTextColor bg-textColor my-5 rounded-md relative">
+    <h1 class=" text-sm absolute right-2">{formatISOstring(news.date)}</h1>
+    <h1 class=" pt-4 text-2xl text-center">{news.title}</h1>
+    <div class=" pb-4  mt-5 w-4/5 mx-auto">
+        <h1 class=" whitespace-pre-line">{news.body}</h1>
     </div>
 </div>

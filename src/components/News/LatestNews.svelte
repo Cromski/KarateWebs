@@ -1,16 +1,15 @@
 <script lang="ts">
-    import moment from "moment";
     import NewsStore from "../../stores/news/NewsStore";
     import OneNews from "./OneNews.svelte";
-    
-
 
 </script>
 
 
 {#each [...$NewsStore].reverse() as news, index}
     {#if news}
-        <OneNews news={news} />
+        <div class="w-3/5 mx-auto">
+            <OneNews news={news} />
+        </div>
     {/if}
 {/each}
 

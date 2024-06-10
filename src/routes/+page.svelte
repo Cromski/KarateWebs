@@ -4,6 +4,13 @@
     import HexagonStack from '../components/HexagonStack.svelte';
     import Nyheder from '../components/Nyheder.svelte';
     import MediaQuery from 'svelte-media-queries'
+    import { onMount } from "svelte";
+    import NewsStore from '../stores/news/NewsStore';
+
+    onMount(() => {
+        NewsStore.init();
+        console.log("news, inited")
+    })
 
 </script>
 

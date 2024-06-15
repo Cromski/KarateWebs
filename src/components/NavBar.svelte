@@ -12,6 +12,7 @@
         {text: "Nyheder", route: "/nyheder"},
         {text: "Bliv medlem", route: "/bliv-medlem"},
         {text: "Galleri", route: "/galleri"},
+        {text: "Log ind", route: "/signin"}
     ]
 
 </script>

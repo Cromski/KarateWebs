@@ -4,6 +4,8 @@
     import LatestNews from "../../components/News/LatestNews.svelte";
     import { onMount } from "svelte";
 
+    export let data;
+
     onMount(() => {
         NewsStore.init();
         console.log("news, inited")

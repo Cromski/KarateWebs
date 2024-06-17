@@ -3,7 +3,7 @@ import { OAuth2Client } from "google-auth-library";
 import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET } from "$env/static/private";
 
 export const GET = async ({url, cookies}) => {
-    const redirectURL = 'https://www.jakobrh.dk/oauth';
+    const redirectURL = 'https://jakobrh.dk/oauth';
     const code = await url.searchParams.get('code');
     // console.log('returned code', code)
     const all = cookies.getAll();

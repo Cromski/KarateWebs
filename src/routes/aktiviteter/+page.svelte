@@ -4,10 +4,11 @@
     import EventStore from "../../stores/calendar/EventStore";
     import TrainingTimes from "../../components/TrainingTimes.svelte";
     import { onMount } from "svelte";
+    export let data;
 
     onMount(() => {
         EventStore.init();
-        console.log("events, inited")
+        console.log("events, inited", data)
     })
 
 </script>

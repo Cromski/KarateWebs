@@ -3,6 +3,7 @@
     import NavBarOpen from '../stores/NavMenuOpenStore';
     import { fade, fly } from 'svelte/transition';
 
+    export let user;
     let y:number
 
     const navBarItems = [
@@ -11,9 +12,13 @@
         {text: "Kontakt os", route: "/kontakt"},
         {text: "Nyheder", route: "/nyheder"},
         {text: "Bliv medlem", route: "/bliv-medlem"},
-        {text: "Galleri", route: "/galleri"},
-        {text: "Log ind", route: "/signin"}
+        {text: "Galleri", route: "/galleri"}
     ]
+        
+    if(!user)
+        navBarItems.push({text: "LOG IN", route: "/signin"})
+    else 
+        navBarItems.push({text: "LOG OUT", route: "/signin"})
 
 </script>
 

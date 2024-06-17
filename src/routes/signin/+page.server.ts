@@ -4,7 +4,7 @@ import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET } from "$env/static/private";
 
 export const actions= {
     OAuth2: async({}) =>{
-        const redirectURL = 'https://jakobrh.dk/oauth';
+        const redirectURL = 'https://www.jakobrh.dk/oauth';
 
         const oAuth2Client = new OAuth2Client(
             AUTH_GOOGLE_ID,
@@ -13,7 +13,7 @@ export const actions= {
         )
 
         const authorizeUrl = oAuth2Client.generateAuthUrl({
-            access_type: 'online',
+            access_type: 'offline',
             scope:'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email openid',
             prompt: 'consent'
         });

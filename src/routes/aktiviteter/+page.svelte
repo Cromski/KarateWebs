@@ -13,7 +13,7 @@
 
 </script>
 
-<div class="my-7">
+<div class="my-7 text-textColor">
     <TrainingTimes />
 </div>
 <FullCalendar />

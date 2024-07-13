@@ -51,7 +51,7 @@
         {#each $monthsStore as month, i}
           <button
             on:click={() => updateSelectedMonths(i)}
-            class="py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+            class="py-2 px-4 border border-textColor text-textColor rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
           >
             {month.substring(0,3)}
           </button>
@@ -76,7 +76,7 @@
 <MediaQuery query='(min-width: 768px)' let:matches> <!-- pc -->
     {#if matches}
         {#each viewSizes as viewSize}
-            <button class=" my-6 py-2 px-4 float-right border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 hover:bg-gray-100" on:click={() => updateViewSize(viewSize.value)}>{viewSize.name}</button>
+            <button class=" my-6 py-2 px-4 float-right border border-textColor text-textColor rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 hover:bg-gray-100" on:click={() => updateViewSize(viewSize.value)}>{viewSize.name}</button>
         {/each}
         <div style={`width: ${viewSize}%`} class=" relative mx-auto flex justify-center">
             {#each $selectedMonthsStore as month}

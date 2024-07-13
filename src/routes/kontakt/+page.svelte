@@ -5,7 +5,7 @@
 
 <h1 class=" text-4xl md:text-5xl text-center md:text-left md:mb-10 mt-8 md:ml-32 font-bold text-textColor">Kontakt os</h1>
 
-<div class="flex flex-row flex-wrap">
+<div class="flex flex-row flex-wrap text-textColor">
     <div class=" md:ml-20 lg:ml-48 my-7 mx-10">
         <h1 class=" leading-6">
         

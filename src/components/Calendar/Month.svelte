@@ -16,7 +16,7 @@
 
 <div style={`width: ${100/$selectedMonthsStore.length}%`}>
     <div class=" h-9 bg-slate-500 border-spacing-4 border-amber-500 b-6">
-        <h1 class=" text-center leading-9">{$monthsStore[month]}</h1>
+        <h1 class=" text-center text-textColor leading-9">{$monthsStore[month]}</h1>
     </div>
     <div>
         {#each Array(daysInMonth) as _, i}

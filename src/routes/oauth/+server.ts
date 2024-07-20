@@ -20,8 +20,8 @@ export const GET = async ({url, cookies}) => {
         console.log('Auth tokens received')
         const user = oAuth2Client.credentials;
         console.log('credentials:',user)
-        /* @migration task: add path argument */ cookies.set("user", JSON.stringify(user),"/")
-        console.log("lolhaha: ",r)
+        /* @migration task: add path argument */ cookies.set("user", JSON.stringify(user),{ path: '/' })
+        console.log("lolhaha: ",r)  
     }catch(err){
         console.log('error loging in with google',err)
 

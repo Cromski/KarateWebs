@@ -16,9 +16,9 @@
     ]
         
     if(!user)
-        navBarItems.push({text: "LOG IN", route: "/signin"})
+        navBarItems.push({text: "Log ind", route: "/signin"})
     else 
-        navBarItems.push({text: "LOG OUT", route: "/signin"})
+        navBarItems.push({text: "Log ud", route: "/signout"})
 
 </script>
 
@@ -36,7 +36,7 @@
     {#if $NavBarOpen}
         <div in:fly={{ y:200, duration:200}} out:fly={{x:200, duration:200}} class="absolute top-[98px] md:hidden z-10 bg-backgroundLighter w-full grid grid-cols-1 ">
             {#each navBarItems as item}
-                <a class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => NavBarOpen.set(false)} href={item.route}>{item.text}</a>
+                <a data-sveltekit-reload data-sveltekit-preload-data={"off"} class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => NavBarOpen.set(false)} href={item.route}>{item.text}</a>
             {/each}
         </div>
     {/if}
@@ -44,7 +44,7 @@
     <!--  big screen  -->
     <div class="hidden text-textColor items-center md:flex gap-6 lg:gap-12 text-lg lg:text-xl mr-4 lg:mr-8 2xl:text-2xl 2xl:gap-20 2xl:mr-16">
         {#each navBarItems as item}
-            <a href={item.route}>{item.text}</a>
+            <a data-sveltekit-reload data-sveltekit-preload-data={"off"} href={item.route}>{item.text}</a>
         {/each}
     </div>
 </div>
@@ -61,7 +61,7 @@
     {#if $NavBarOpen}
         <div in:fly={{ y:200, duration:200}} out:fly={{x:200, duration:200}} class="absolute top-[98px] md:hidden z-10 bg-backgroundLighter w-full grid grid-cols-1 ">
             {#each navBarItems as item}
-                <a class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => NavBarOpen.set(false)} href={item.route}>{item.text}</a>
+                <a data-sveltekit-reload data-sveltekit-preload-data={"off"} class=" text-right text-xl font-semibold pr-14 h-14 leading-[56px] hover:bg-backgroundColor" on:click={() => NavBarOpen.set(false)} href={item.route}>{item.text}</a>
             {/each}
         </div>
     {/if}
@@ -69,7 +69,7 @@
     <!--  big screen  -->
     <div class="hidden text-textColor items-center md:flex gap-6 lg:gap-12 text-lg lg:text-xl mr-4 lg:mr-8 2xl:text-2xl 2xl:gap-20 2xl:mr-16">
         {#each navBarItems as item}
-            <a href={item.route}>{item.text}</a>
+            <a data-sveltekit-reload data-sveltekit-preload-data={"off"} href={item.route}>{item.text}</a>
         {/each}
     </div>
 </div>

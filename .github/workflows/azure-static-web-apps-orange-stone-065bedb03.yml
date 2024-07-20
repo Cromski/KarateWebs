@@ -36,6 +36,7 @@ jobs:
           PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
           AUTH_GOOGLE_ID: ${{ secrets.AUTH_GOOGLE_ID }}
           AUTH_GOOGLE_SECRET: ${{ secrets.AUTH_GOOGLE_SECRET }}
+          REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
         
 
   close_pull_request_job:

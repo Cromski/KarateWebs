@@ -1,10 +1,10 @@
 import { error, redirect } from "@sveltejs/kit";
 import { OAuth2Client } from "google-auth-library";
-import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET } from "$env/static/private";
+import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, REDIRECT_URL } from "$env/static/private";
 
 export const actions= {
     OAuth2: async({}) =>{
-        const redirectURL = 'https://www.jakobrh.dk/oauth';
+        const redirectURL = `${REDIRECT_URL}/oauth`;
 
         const oAuth2Client = new OAuth2Client(
             AUTH_GOOGLE_ID,

@@ -1,9 +1,10 @@
 import { redirect } from "@sveltejs/kit";
 import { OAuth2Client } from "google-auth-library";
-import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET } from "$env/static/private";
+import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, REDIRECT_URL } from "$env/static/private";
 
 export const GET = async ({url, cookies}) => {
-    const redirectURL = 'https://www.jakobrh.dk/oauth';
+    
+    const redirectURL = `${REDIRECT_URL}/oauth`;
     const code = await url.searchParams.get('code');
     // console.log('returned code', code)
     const all = cookies.getAll();
@@ -20,7 +21,7 @@ export const GET = async ({url, cookies}) => {
         console.log('Auth tokens received')
         const user = oAuth2Client.credentials;
         console.log('credentials:',user)
-        /* @migration task: add path argument */ cookies.set("user", JSON.stringify(user),{ path: '/' })
+        cookies.set("user", JSON.stringify(user),{ path: '/' })
         console.log("lolhaha: ",r)  
     }catch(err){
         console.log('error loging in with google',err)

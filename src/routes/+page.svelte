@@ -18,7 +18,7 @@
     <div>
         <!-- https://github.com/LeoDog896/svelte-tilt -->
         <img  use:tilt={{ reverse: true}} src="/bsi-logo.png" alt="" class="w-4/5 mx-auto mt-14 max-w-[60%]">
-        <h1 class=" text-center mx-auto my-7 text-textColor text-xl w-4/5 ">Cras sollicidtuion sodalfes quam, et tempus est bibendum eget. pPrawesent et velit ague. Quisque vulputate lettus sit amet scaliseique piacerat.</h1>
+        <h1 class=" text-center mx-auto my-7 text-textColor text-xl w-4/5 ">Hos os træner vi Wado Ryu-karate og vægter både fællesskab og personlig udvikling højt. Alle er velkomne, uanset niveau. Kom og oplev karate på Strandgårdsskolen!</h1>
     </div>
     
     <Collage />

@@ -20,10 +20,10 @@ export const GET = async ({url, cookies}) => {
         console.log('Auth tokens received')
         const user = oAuth2Client.credentials;
         console.log('credentials:',user)
-        cookies.set("user", JSON.stringify(user))
+        /* @migration task: add path argument */ cookies.set("user", JSON.stringify(user))
     }catch(err){
         console.log('error loging in with google',err)
 
     }
-    throw redirect(303,'/')
+    redirect(303,'/');
 }

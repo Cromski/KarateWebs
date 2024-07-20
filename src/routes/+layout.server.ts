@@ -1,3 +1,4 @@
+import { error } from "@sveltejs/kit";
 import moment from "moment";
 
 export function load({ cookies }) {

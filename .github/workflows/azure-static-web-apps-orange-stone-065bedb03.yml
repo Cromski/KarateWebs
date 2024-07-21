@@ -37,6 +37,7 @@ jobs:
           AUTH_GOOGLE_ID: ${{ secrets.AUTH_GOOGLE_ID }}
           AUTH_GOOGLE_SECRET: ${{ secrets.AUTH_GOOGLE_SECRET }}
           REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
+          AZURE_STORAGE_ACCOUNT_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_ACCOUNT_CONNECTION_STRING }}
         
 
   close_pull_request_job:
